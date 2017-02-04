@@ -1,8 +1,21 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model MyAbacus.Models.AbacusViewModel
+
+@using (Html.BeginForm("PerformCalculation", "Home", FormMethod.Post))
+{
+    <h1>My Abacus</h1>
+    <br />
+    
+    @Html.TextBoxFor(m => m.Number1)
+    <label> + </label>
+    @Html.TextBoxFor(m => m.Number2)
+    <input type="submit" value="=" />
+    <input type="text" readonly="readonly" value="@Model.Sum" />
+    
+    
 }
 
-<div class="jumbotron">
+
+<!--<div class="jumbotron">
     <h1>ASP.NET</h1>
     <p class="lead">My Abacus is a simple web application that adds two numbers and displays the result.</p>
     <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
@@ -37,3 +50,4 @@
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+    -->

@@ -13,20 +13,23 @@ namespace MyAbacus.Models
 {
     public class AbacusModel
     {
-        public AbacusModel(double number1, double number2)
+        public AbacusModel(string number1, string number2)
         {
             Number1 = number1;
             Number2 = number2;
             Sum = CalculateSum(Number1, Number2);
         }
 
-        public double Sum { get; set; }
-        public double Number1 { get; set; }
-        public double Number2 { get; set; }
+        public string Sum { get; set; }
+        public string Number1 { get; set; }
+        public string Number2 { get; set; }
 
-        private double CalculateSum(double number1, double number2)
+        private string CalculateSum(string number1, string number2)
         {
-            Sum = number1 + number2;
+            double n1 = Convert.ToDouble(number1);
+            double n2 = Convert.ToDouble(number2);
+            double s = n1 + n2;
+            Sum = s.ToString();
             return Sum;
         }
     }

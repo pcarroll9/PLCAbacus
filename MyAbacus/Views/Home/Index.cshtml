@@ -4,7 +4,7 @@
 {
     <h1>My Abacus</h1>
     <br />
-    
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
     @Html.TextBoxFor(m => m.Number1)
     <label> + </label>
     @Html.TextBoxFor(m => m.Number2)

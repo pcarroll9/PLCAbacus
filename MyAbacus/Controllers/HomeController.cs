@@ -17,8 +17,12 @@ namespace MyAbacus.Controllers
         [HttpPost]
         public ActionResult PerformCalculation(AbacusViewModel model)
         {
-            var abucusModel = new AbacusModel(model.Number1, model.Number2);
-            model.Sum = abucusModel.Sum;
+            if(ModelState.IsValid)
+            {
+                var abucusModel = new AbacusModel(model.Number1, model.Number2);
+                model.Sum = abucusModel.Sum;
+            }
+                        
             return View("Index", model);
         }
 
